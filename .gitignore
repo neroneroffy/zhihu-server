@@ -1,0 +1,7 @@
+.idea
+.vscode
+/node_modules
+/neroht-admin
+/server-bundle
+package-lock.json
+.neroht-admin.zip
