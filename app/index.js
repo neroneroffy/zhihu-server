@@ -14,9 +14,15 @@ const parameter = require('koa-parameter')
 const mongoose = require('mongoose')
 const path = require('path')
 const { connectionStr } = require('./config')
+const cors = require('koa2-cors');
 
 mongoose.connect(connectionStr, () => console.log('MongoDB已经连接'))
 mongoose.connection.on('err', console.error)
+app.use(cors({
+  origin: function (ctx) {
+    return '*'
+  },
+}))
 
 app.use(koaStatic(path.join(__dirname, 'public')))
 app.use(error({
@@ -33,3 +39,4 @@ app.use(koaBody({
 app.use(parameter(app))
 routing(app)
 app.listen(3000, () => console.log('app lintening on port 3000'))
+

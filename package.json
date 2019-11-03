@@ -5,7 +5,8 @@
   "main": "app/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node app",
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "build": "webpack "
   },
   "author": "",
   "license": "ISC",
@@ -18,8 +19,11 @@
     "koa-parameter": "^3.0.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
     "mongoose": "^5.6.11",
-    "qiniu": "^7.2.2"
+    "qiniu": "^7.2.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
